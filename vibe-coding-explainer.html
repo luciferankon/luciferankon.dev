@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You Don't Have to Understand the Code Anymore — Luciferankon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --bg: #050508; --surface: #0d0d14; --gold: #f5c842; --blue: #4f8fff; --white: #f0f0f8; --muted: #6b6b88; --border: rgba(255,255,255,0.06); }
+body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(5,5,8,0.9); backdrop-filter: blur(20px); z-index: 100; }
+.nav-logo { font-family: 'Space Mono', monospace; color: var(--gold); text-decoration: none; font-size: 1rem; }
+.nav-back { color: var(--muted); text-decoration: none; font-size: 0.88rem; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+.nav-back:hover { color: var(--white); }
+main { max-width: 720px; margin: 0 auto; padding: 5rem 2rem 8rem; }
+.post-tag { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.5rem; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 0.75rem; }
+.post-sub { font-size: 1.15rem; color: var(--muted); margin-bottom: 1.5rem; }
+.post-meta { display: flex; gap: 1.5rem; align-items: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 0; margin-bottom: 3rem; font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--muted); }
+.post-meta span { display: flex; align-items: center; gap: 0.4rem; }
+.post-content h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin: 3rem 0 1rem; color: var(--white); }
+.post-content h3 { font-size: 1.1rem; font-weight: 600; margin: 2rem 0 0.75rem; color: var(--white); }
+.post-content p { color: #b0b0c8; margin-bottom: 1.25rem; font-size: 1.05rem; }
+.post-content blockquote { border-left: 3px solid var(--gold); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(245,200,66,0.04); border-radius: 0 8px 8px 0; }
+.post-content blockquote p { color: var(--white); font-style: italic; margin: 0; }
+.post-content blockquote cite { display: block; margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted); font-style: normal; }
+.callout { background: rgba(79,143,255,0.07); border: 1px solid rgba(79,143,255,0.2); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; color: #b0b0c8; font-size: 1rem; }
+table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; }
+th { text-align: left; padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+td { padding: 0.9rem 1rem; color: #b0b0c8; border-bottom: 1px solid rgba(255,255,255,0.03); vertical-align: top; }
+td strong { color: var(--white); font-weight: 600; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.numbered-section { display: flex; gap: 1.25rem; margin-bottom: 1.5rem; }
+.num { font-family: 'Space Mono', monospace; font-size: 0.82rem; color: var(--gold); padding-top: 0.2rem; flex-shrink: 0; }
+.post-footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; }
+.post-footer p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.5rem; }
+.back-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 0.75rem 1.5rem; border-radius: 100px; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: border-color 0.2s; }
+.back-btn:hover { border-color: rgba(255,255,255,0.2); }
+@media (max-width: 600px) { nav { padding: 1.2rem 1.5rem; } main { padding: 3rem 1.5rem 6rem; } }
+</style>
+</head>
+<body>
+<nav>
+<a href="index.html" class="nav-logo">luciferankon.</a>
+<a href="index.html#blog" class="nav-back">← All posts</a>
+</nav>
+<main>
+<div class="post-tag">// Tech · Emerging</div>
+<h1>You Don't Have to Understand the Code Anymore</h1>
+<p class="post-sub">And that changes everything.</p>
+<div class="post-meta">
+<span>📅 March 2026</span>
+<span>⏱ 5 min read</span>
+<span>✍️ Luciferankon</span>
+</div>
+<div class="post-content">
+<blockquote>
+<p>"There's a new kind of coding I call 'vibe coding', where you fully give in to the vibes, embrace exponentials, and forget that the code even exists."</p>
+<cite>— Andrej Karpathy, co-founder of OpenAI</cite>
+</blockquote>
+<p>That quote landed like a grenade in developer circles when Karpathy posted it in early 2025. Was he serious? Was he trolling? Turns out — he was just early.</p>
+<h2>So What Actually Is Vibe Coding?</h2>
+<p>Here's the shortest version: <strong>you describe what you want. AI writes the code. You ship.</strong></p>
+<p>No syntax. No Stack Overflow rabbit holes. No debugging at 2am wondering why a semicolon is ruining your life.</p>
+<p>You type something like: <em>"Build me a web app where users upload a CSV and can plot any two columns as a bar chart."</em> And tools like Cursor, Windsurf, or Claude produce a working app. You run it. Something breaks. You paste the error back in. It fixes it. You never write a function yourself.</p>
+<p>That's vibe coding. Programming by feel.</p>
+<h2>🔥 Why Everyone's Talking About It</h2>
+<div class="numbered-section"><div class="num">01</div><div><h3>The code is actually good now</h3><p>A year ago, AI-generated code was plausible-looking but quietly broken. Today, frontier models produce correct, structured, deployable code for a wide range of tasks. The quality bar crossed a threshold — and it's not going back.</p></div></div>
+<div class="numbered-section"><div class="num">02</div><div><h3>Iteration went from days to hours</h3><p>Every change you make yourself costs time and mental energy. With AI doing the typing, you can try five approaches before lunch. The cost of a bad idea has collapsed.</p></div></div>
+<div class="numbered-section"><div class="num">03</div><div><h3>Non-developers are shipping real software</h3><p>Designers. Analysts. Founders. People with zero engineering background are building and deploying actual tools. The gap between "I have an idea" and "I have a working product" has never been smaller.</p></div></div>
+<h2>The Tools You Should Know</h2>
+<table><thead><tr><th>Tool</th><th>Best For</th></tr></thead><tbody>
+<tr><td><strong>Cursor</strong></td><td>Developers — edits across your whole codebase</td></tr>
+<tr><td><strong>Windsurf</strong></td><td>Developers — smooth, minimal-interruption flow</td></tr>
+<tr><td><strong>Bolt / Lovable / v0</strong></td><td>Non-developers — describe an app, get a URL</td></tr>
+<tr><td><strong>Claude / ChatGPT</strong></td><td>Anything — paste, describe, iterate</td></tr>
+<tr><td><strong>GitHub Copilot Workspace</strong></td><td>Teams already in the GitHub ecosystem</td></tr>
+</tbody></table>
+<h2>⚠️ But Here's the Part Nobody's Talking About</h2>
+<p>Vibe coding is powerful. It's also genuinely risky if you're not paying attention.</p>
+<p><strong>You can get lost fast.</strong> When you don't understand the code you're running, debugging becomes guesswork.</p>
+<p><strong>It doesn't scale to complexity.</strong> Small tools, scripts, prototypes — yes. Large codebases — not yet.</p>
+<p><strong>Security is your problem.</strong> AI-generated code isn't audited. It can include subtle bugs or insecure patterns — and it won't warn you.</p>
+<div class="callout">💡 <strong>The mental model that helps:</strong> Think of AI as a very fast, very capable junior dev. Impressive output. Still needs supervision.</div>
+<h2>Is This Even "Real" Coding?</h2>
+<p>The question is beside the point. Vibe coding is <em>building</em> — turning ideas into working software. The abstraction level has just moved up another rung:</p>
+<p><strong>Assembly → C → Python → No-code → Vibe coding</strong></p>
+<p>Each step, fewer people needed to understand the layer below. More people could build. What's changing is the entry point — not the destination.</p>
+<h2>Where This Goes Next</h2>
+<p>The trajectory is clear. Models will get better. Context windows will grow. The "describe it → it works" gap will keep closing. Junior dev roles shift. Domain experts become builders. Quality standards need rethinking.</p>
+<p>The best thing you can do right now? <strong>Try it.</strong> Pick something small and see how far you get before you hit a wall. The wall is informative. So is everything before it.</p>
+</div>
+<div class="post-footer">
+<p>Experimenting with vibe coding? Hit a wall (or didn't)? I'd love to hear what you're building.</p>
+<a href="mailto:ankanchakraborty1998@gmail.com" class="back-btn">✉️ Get in touch</a>
+</div>
+</main>
+</body>
+</html>
