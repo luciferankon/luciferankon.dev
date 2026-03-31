@@ -75,224 +75,378 @@ transition: color 0.2s;
 .nav-links a:hover { color: var(--white); }
 section {
 position: relative;
-z-index: 10;
-}
-.hero {
-height: 100vh;
+z-index: 1;
+min-height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
-text-align: center;
-padding: 2rem;
+padding: 0 4rem;
 }
-.hero-content h1 {
-font-size: clamp(2.5rem, 6vw, 5rem);
+.content {
+max-width: 1200px;
+width: 100%;
+}
+h1 {
+font-size: clamp(2.5rem, 6vw, 4.5rem);
 font-weight: 700;
 line-height: 1.2;
-margin-bottom: 1.5rem;
-letter-spacing: -0.02em;
+margin-bottom: 1rem;
+background: linear-gradient(135deg, var(--gold), var(--blue));
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
 }
-.hero-content p {
-font-size: 1.15rem;
+.subtitle {
+font-size: 1.25rem;
 color: var(--muted);
-max-width: 600px;
-margin: 0 auto 2rem;
+margin-bottom: 2rem;
 line-height: 1.6;
 }
-.cta-button {
-display: inline-block;
-padding: 0.95rem 2.5rem;
-background: var(--gold);
-color: var(--bg);
-border: none;
-border-radius: 8px;
-font-weight: 700;
-font-family: 'Space Grotesk', sans-serif;
-cursor: pointer;
+.cta-group {
+display: flex;
+gap: 1rem;
+margin-bottom: 3rem;
+flex-wrap: wrap;
+}
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.875rem 1.75rem;
+font-size: 0.9rem;
+font-weight: 600;
 text-decoration: none;
-font-size: 0.95rem;
-letter-spacing: 0.05em;
+color: var(--white);
+border: 2px solid var(--gold);
+background: transparent;
+border-radius: var(--radius);
+cursor: pointer;
 transition: all 0.3s;
 text-transform: uppercase;
+letter-spacing: 0.04em;
 }
-.cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245,200,66,0.3); }
-.projects-section {
-padding: 6rem 4rem;
-background: var(--surface);
+.btn:hover {
+background: var(--gold);
+color: var(--bg);
+transform: translateY(-2px);
+}
+.btn-secondary {
+border-color: var(--blue);
+color: var(--blue);
+}
+.btn-secondary:hover {
+background: var(--blue);
+color: var(--white);
+}
+.stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+margin-bottom: 4rem;
+}
+.stat {
+border: 1px solid var(--border);
+border-radius: var(--radius);
+padding: 1.5rem;
+background: rgba(0,0,0,0.3);
+}
+.stat-value {
+font-size: 1.75rem;
+font-weight: 700;
+color: var(--gold);
+margin-bottom: 0.5rem;
+}
+.stat-label {
+font-size: 0.85rem;
+color: var(--muted);
+text-transform: uppercase;
+letter-spacing: 0.04em;
+}
+.projects {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
 margin-top: 2rem;
 }
-.projects-section h2 {
-font-size: clamp(1.8rem, 4vw, 3rem);
-margin-bottom: 4rem;
-text-align: center;
-letter-spacing: -0.01em;
-}
-.projects-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 2rem;
-}
 .project-card {
-background: var(--bg);
 border: 1px solid var(--border);
 border-radius: var(--radius);
 padding: 2rem;
+background: linear-gradient(135deg, rgba(245,200,66,0.05), transparent);
 transition: all 0.3s;
 cursor: pointer;
 }
 .project-card:hover {
 border-color: var(--gold);
 transform: translateY(-4px);
-box-shadow: 0 12px 40px rgba(245,200,66,0.15);
+box-shadow: 0 20px 40px rgba(245,200,66,0.1);
+background: linear-gradient(135deg, rgba(245,200,66,0.1), transparent);
 }
-.project-card h3 {
-font-size: 1.4rem;
-margin-bottom: 0.8rem;
-color: var(--gold);
+.project-title {
+font-size: 1.25rem;
+font-weight: 600;
+color: var(--white);
+margin-bottom: 0.75rem;
 }
-.project-card p {
+.project-desc {
+font-size: 0.95rem;
 color: var(--muted);
 line-height: 1.6;
 margin-bottom: 1.5rem;
-font-size: 0.95rem;
 }
-.tech-tags {
+.project-tags {
 display: flex;
 flex-wrap: wrap;
-gap: 0.6rem;
-margin-bottom: 1.5rem;
+gap: 0.5rem;
+margin-top: 1rem;
 }
-.tech-tag {
-background: var(--gold-dim);
-color: var(--gold);
-padding: 0.4rem 0.85rem;
-border-radius: 6px;
-font-size: 0.8rem;
-font-weight: 500;
-}
-.project-link {
+.tag {
+display: inline-block;
+padding: 0.4rem 0.8rem;
+font-size: 0.75rem;
 color: var(--blue);
-text-decoration: none;
-font-weight: 600;
-font-size: 0.9rem;
-transition: all 0.2s;
+border: 1px solid var(--blue-dim);
+border-radius: 8px;
+text-transform: uppercase;
+letter-spacing: 0.02em;
 }
-.project-link:hover { color: var(--gold); }
-footer {
-padding: 3rem 4rem;
+.footer {
+position: relative;
+z-index: 1;
+padding: 4rem;
 text-align: center;
 border-top: 1px solid var(--border);
+}
+.footer-text {
 color: var(--muted);
 font-size: 0.9rem;
+margin-bottom: 1.5rem;
 }
+.socials {
+display: flex;
+justify-content: center;
+gap: 2rem;
+}
+.social-link {
+color: var(--muted);
+text-decoration: none;
+font-weight: 600;
+transition: color 0.2s;
+}
+.social-link:hover { color: var(--gold); }
 @media (max-width: 768px) {
-nav { padding: 1.2rem 2rem; }
-.projects-section { padding: 4rem 2rem; }
-.projects-grid { grid-template-columns: 1fr; }
+nav { padding: 1rem 2rem; }
+section { padding: 2rem; }
+h1 { font-size: 2rem; }
+.cta-group { flex-direction: column; }
+.btn { width: 100%; }
+.footer { padding: 2rem; }
 }
 </style>
 </head>
 <body>
 <canvas id="bg-canvas"></canvas>
-
 <nav>
-<a href="#" class="nav-logo">luciferankon</a>
+<a href="#" class="nav-logo">{ ankon }</a>
 <ul class="nav-links">
 <li><a href="#projects">Projects</a></li>
-<li><a href="#about">About</a></li>
+<li><a href="#writing">Writing</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-
-<section class="hero">
-<div class="hero-content">
-<h1>Tech Lead, Builder, Writer</h1>
-<p>I craft elegant systems, ship ambitious products, and document the journey along the way.</p>
-<a href="#projects" class="cta-button">View My Work</a>
+<section id="hero">
+<div class="content">
+<h1>Building products that matter</h1>
+<p class="subtitle">Tech lead, engineer, and builder creating scalable systems and exceptional user experiences. Currently working on GitPulse and Pikacards. Passionate about clean code, architecture, and shipping fast.</p>
+<div class="cta-group">
+<a href="https://github.com/luciferankon" class="btn">GitHub</a>
+<a href="#projects" class="btn btn-secondary">View Projects</a>
 </div>
-</section>
-
-<section class="projects-section" id="projects">
-<h2>Featured Projects</h2>
-<div class="projects-grid">
-<div class="project-card">
-<h3>ShipReady</h3>
-<p>A comprehensive platform for managing product launches and deployment workflows with real-time collaboration features.</p>
-<div class="tech-tags">
-<span class="tech-tag">React</span>
-<span class="tech-tag">Node.js</span>
-<span class="tech-tag">PostgreSQL</span>
+<div class="stats">
+<div class="stat">
+<div class="stat-value">5+</div>
+<div class="stat-label">Years Experience</div>
 </div>
-<a href="#" class="project-link">Learn More →</a>
+<div class="stat">
+<div class="stat-value">15+</div>
+<div class="stat-label">Projects Shipped</div>
 </div>
-
-<div class="project-card">
-<h3>DataViz Hub</h3>
-<p>Transform complex datasets into beautiful, interactive visualizations with an intuitive drag-and-drop interface.</p>
-<div class="tech-tags">
-<span class="tech-tag">D3.js</span>
-<span class="tech-tag">Vue.js</span>
-<span class="tech-tag">WebGL</span>
+<div class="stat">
+<div class="stat-value">2</div>
+<div class="stat-label">Companies Built</div>
 </div>
-<a href="#" class="project-link">Learn More →</a>
-</div>
-
-<div class="project-card">
-<h3>CloudSync</h3>
-<p>Enterprise-grade file synchronization and version control system with end-to-end encryption.</p>
-<div class="tech-tags">
-<span class="tech-tag">Go</span>
-<span class="tech-tag">gRPC</span>
-<span class="tech-tag">AWS</span>
-</div>
-<a href="#" class="project-link">Learn More →</a>
 </div>
 </div>
 </section>
-
-<footer>
-<p>&copy; 2026 Luciferankon. All rights reserved.</p>
+<section id="projects">
+<div class="content">
+<h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: var(--white);">Currently Building</h2>
+<div class="projects">
+<div class="project-card">
+<div class="project-title">GitPulse</div>
+<div class="project-desc">AI-powered GitHub analytics dashboard providing real-time insights into repository health, team productivity, and code quality metrics.</div>
+<div class="project-tags">
+<span class="tag">Next.js</span>
+<span class="tag">React</span>
+<span class="tag">AI</span>
+<span class="tag">Analytics</span>
+</div>
+</div>
+<div class="project-card">
+<div class="project-title">Pikacards</div>
+<div class="project-desc">High-end TCG (Trading Card Game) e-commerce store selling authentic Japanese Pokemon and Yu-Gi-Oh! sealed products across Shopify and eBay.</div>
+<div class="project-tags">
+<span class="tag">E-commerce</span>
+<span class="tag">Shopify</span>
+<span class="tag">eBay</span>
+<span class="tag">Automation</span>
+</div>
+</div>
+<div class="project-card">
+<div class="project-title">This Website</div>
+<div class="project-desc">Personal portfolio with animated canvas background, smooth scroll animations, and modern typography using Three.js and GSAP.</div>
+<div class="project-tags">
+<span class="tag">Three.js</span>
+<span class="tag">GSAP</span>
+<span class="tag">WebGL</span>
+<span class="tag">Animation</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="writing">
+<div class="content">
+<h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: var(--white);">Recent Articles</h2>
+<div class="projects" style="grid-template-columns: 1fr;">
+<div class="project-card">
+<div class="project-title">Building Scalable Systems</div>
+<div class="project-desc">Lessons learned from building production systems at scale. Covers architecture decisions, database optimization, and deployment strategies.</div>
+<div class="project-tags">
+<span class="tag">Architecture</span>
+<span class="tag">Backend</span>
+<span class="tag">DevOps</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer">
+<p class="footer-text">Built with Three.js, GSAP, and modern web technologies. Source on <a href="https://github.com/luciferankon/luciferankon.dev" style="color: var(--gold); text-decoration: none; font-weight: 600;">GitHub</a>.</p>
+<div class="socials">
+<a href="https://github.com/luciferankon" class="social-link">GitHub</a>
+<a href="https://linkedin.com/in/ankanchakraborty" class="social-link">LinkedIn</a>
+<a href="mailto:ankanchakraborty1998@gmail.com" class="social-link">Email</a>
+</div>
 </footer>
-
 <script>
 const canvas = document.getElementById('bg-canvas');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x050508, 1);
 camera.position.z = 5;
-
-const geometry = new THREE.IcosahedronGeometry(2, 4);
-const material = new THREE.MeshPhongMaterial({
-color: 0xf5c842,
-emissive: 0x4f8fff,
-emissiveIntensity: 0.2,
-wireframe: false
-});
-
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
-
+const particleGeometry = new THREE.BufferGeometry();
+const particleCount = 5000;
+const positionArray = new Float32Array(particleCount * 3);
+for (let i = 0; i < particleCount * 3; i += 3) {
+positionArray[i] = (Math.random() - 0.5) * 2000;
+positionArray[i + 1] = (Math.random() - 0.5) * 2000;
+positionArray[i + 2] = (Math.random() - 0.5) * 2000;
+}
+particleGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
+const particleMaterial = new THREE.PointsMaterial({ color: 0xf5c842, size: 2, sizeAttenuation: true });
+const particlesMesh = new THREE.Points(particleGeometry, particleMaterial);
+scene.add(particlesMesh);
+const sphereGeometry = new THREE.IcosahedronGeometry(100, 4);
+const sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x4f8fff, emissive: 0x1a3a66, wireframe: false });
+const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+sphere.position.z = -200;
+scene.add(sphere);
 const light = new THREE.PointLight(0xffffff, 1);
-light.position.set(5, 5, 5);
+light.position.set(5, 7, 8);
 scene.add(light);
-
 window.addEventListener('resize', () => {
 camera.aspect = window.innerWidth / window.innerHeight;
 camera.updateProjectionMatrix();
 renderer.setSize(window.innerWidth, window.innerHeight);
 });
-
+let mouseX = 0, mouseY = 0;
+document.addEventListener('mousemove', (e) => {
+mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+});
 function animate() {
 requestAnimationFrame(animate);
-mesh.rotation.x += 0.001;
-mesh.rotation.y += 0.002;
+particlesMesh.rotation.x += 0.00005;
+particlesMesh.rotation.y += 0.0001;
+sphere.rotation.x += 0.0001;
+sphere.rotation.y += 0.00015;
+sphere.position.x = Math.sin(Date.now() * 0.0001) * 50;
+sphere.position.y = Math.cos(Date.now() * 0.00008) * 50;
+camera.position.x += (mouseX * 100 - camera.position.x) * 0.05;
+camera.position.y += (mouseY * 100 - camera.position.y) * 0.05;
+camera.lookAt(scene.position);
 renderer.render(scene, camera);
 }
-
 animate();
+gsap.registerPlugin(ScrollTrigger);
+gsap.to('h1', { scrollTrigger: { trigger: '#hero', start: 'top center', end: 'bottom center', scrub: 1 }, color: '#4f8fff', duration: 1 });
+gsap.to('.subtitle', { scrollTrigger: { trigger: '#projects', start: 'top 80%', end: 'top 20%', scrub: 1 }, opacity: 0.5, duration: 1 });
+const cards = document.querySelectorAll('.project-card');
+cards.forEach((card, index) => {
+gsap.to(card, { scrollTrigger: { trigger: card, start: 'top 80%', end: 'top 20%', scrub: 1 }, y: -20, duration: 0.5, stagger: 0.1, delay: index * 0.1 });
+});
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, { threshold: 0.1 });
+cards.forEach(card => {
+card.style.opacity = '0';
+card.style.transform = 'translateY(20px)';
+card.style.transition = 'opacity 0.6s, transform 0.6s';
+observer.observe(card);
+});
+const ring = document.createElement('div');
+ring.style.position = 'fixed';
+ring.style.width = '40px';
+ring.style.height = '40px';
+ring.style.border = '2px solid rgba(245,200,66,0.5)';
+ring.style.borderRadius = '50%';
+ring.style.pointerEvents = 'none';
+ring.style.zIndex = '9999';
+ring.style.transition = 'all 0.1s';
+document.body.appendChild(ring);
+document.addEventListener('mousemove', (e) => {
+ring.style.left = (e.clientX - 20) + 'px';
+ring.style.top = (e.clientY - 20) + 'px';
+});
+document.addEventListener('mouseenter', () => {
+ring.style.opacity = '1';
+});
+document.addEventListener('mouseleave', () => {
+ring.style.opacity = '0';
+});
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(btn => {
+btn.addEventListener('mouseenter', () => {
+ring.style.width = '60px';
+ring.style.height = '60px';
+ring.style.left = (event.clientX - 30) + 'px';
+ring.style.top = (event.clientY - 30) + 'px';
+ring.style.borderColor = 'rgba(245,200,66,0.8)';
+});
+btn.addEventListener('mouseleave', () => {
+ring.style.width = '40px';
+ring.style.height = '40px';
+ring.style.borderColor = 'rgba(245,200,66,0.5)';
+});
+});
 </script>
 </body>
 </html>
